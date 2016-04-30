@@ -4,7 +4,7 @@
 #
 Name     : perl-Capture-Tiny
 Version  : 0.36
-Release  : 11
+Release  : 12
 URL      : http://search.cpan.org/CPAN/authors/id/D/DA/DAGOLDEN/Capture-Tiny-0.36.tar.gz
 Source0  : http://search.cpan.org/CPAN/authors/id/D/DA/DAGOLDEN/Capture-Tiny-0.36.tar.gz
 Summary  : 'Capture STDOUT and STDERR from Perl, XS or external programs'
