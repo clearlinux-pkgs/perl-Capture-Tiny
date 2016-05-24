@@ -4,7 +4,7 @@
 #
 Name     : perl-Capture-Tiny
 Version  : 0.40
-Release  : 13
+Release  : 14
 URL      : http://search.cpan.org/CPAN/authors/id/D/DA/DAGOLDEN/Capture-Tiny-0.40.tar.gz
 Source0  : http://search.cpan.org/CPAN/authors/id/D/DA/DAGOLDEN/Capture-Tiny-0.40.tar.gz
 Summary  : 'Capture STDOUT and STDERR from Perl, XS or external programs'
@@ -57,7 +57,7 @@ find %{buildroot} -type f -name '*.bs' -empty -exec rm -f {} ';'
 
 %files
 %defattr(-,root,root,-)
-/usr/lib/perl5/site_perl/5.22.0/Capture/Tiny.pm
+/usr/lib/perl5/site_perl/5.24.0/Capture/Tiny.pm
 
 %files doc
 %defattr(-,root,root,-)
