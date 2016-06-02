@@ -1,5 +1,15 @@
 Revision history for Capture-Tiny
 
+0.42      2016-05-31 12:40:10-04:00 America/New_York
+
+  - No changes from 0.41
+
+0.41      2016-05-23 11:58:15-04:00 America/New_York (TRIAL RELEASE)
+
+  [Fixed]
+
+  - Fixed some failing tests when STDIN is routed to /dev/null
+
 0.40      2016-05-23 11:42:35-04:00 America/New_York
 
   - No changes from 0.39
