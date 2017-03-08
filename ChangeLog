@@ -1,5 +1,15 @@
 Revision history for Capture-Tiny
 
+0.46      2017-02-25 14:19:22-05:00 America/New_York
+
+  - No changes from 0.45-TRIAL
+
+0.45      2017-02-23 13:22:43-05:00 America/New_York (TRIAL RELEASE)
+
+  [Internal]
+
+  - Avoid variable shadowing to improve debuggability.
+
 0.44      2016-08-05 13:40:33-04:00 America/New_York
 
   [Docs]
