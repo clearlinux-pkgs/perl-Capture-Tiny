@@ -4,7 +4,7 @@
 #
 Name     : perl-Capture-Tiny
 Version  : 0.46
-Release  : 19
+Release  : 20
 URL      : http://search.cpan.org/CPAN/authors/id/D/DA/DAGOLDEN/Capture-Tiny-0.46.tar.gz
 Source0  : http://search.cpan.org/CPAN/authors/id/D/DA/DAGOLDEN/Capture-Tiny-0.46.tar.gz
 Summary  : 'Capture STDOUT and STDERR from Perl, XS or external programs'
@@ -29,6 +29,9 @@ doc components for the perl-Capture-Tiny package.
 %setup -q -n Capture-Tiny-0.46
 
 %build
+export http_proxy=http://127.0.0.1:9/
+export https_proxy=http://127.0.0.1:9/
+export no_proxy=localhost,127.0.0.1,0.0.0.0
 export LANG=C
 if test -f Makefile.PL; then
 %{__perl} Makefile.PL
@@ -42,7 +45,7 @@ fi
 export LANG=C
 export http_proxy=http://127.0.0.1:9/
 export https_proxy=http://127.0.0.1:9/
-export no_proxy=localhost
+export no_proxy=localhost,127.0.0.1,0.0.0.0
 make TEST_VERBOSE=1 test
 
 %install
@@ -59,7 +62,7 @@ find %{buildroot} -type f -name '*.bs' -empty -exec rm -f {} ';'
 
 %files
 %defattr(-,root,root,-)
-/usr/lib/perl5/site_perl/5.24.0/Capture/Tiny.pm
+/usr/lib/perl5/site_perl/5.26.0/Capture/Tiny.pm
 
 %files doc
 %defattr(-,root,root,-)
