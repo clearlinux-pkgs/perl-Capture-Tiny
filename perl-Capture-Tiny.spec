@@ -4,19 +4,28 @@
 #
 Name     : perl-Capture-Tiny
 Version  : 0.48
-Release  : 27
+Release  : 28
 URL      : https://cpan.metacpan.org/authors/id/D/DA/DAGOLDEN/Capture-Tiny-0.48.tar.gz
 Source0  : https://cpan.metacpan.org/authors/id/D/DA/DAGOLDEN/Capture-Tiny-0.48.tar.gz
 Summary  : 'Capture STDOUT and STDERR from Perl, XS or external programs'
 Group    : Development/Tools
 License  : Apache-2.0
-Requires: perl-Capture-Tiny-license
-Requires: perl-Capture-Tiny-man
+Requires: perl-Capture-Tiny-license = %{version}-%{release}
+BuildRequires : buildreq-cpan
 
 %description
 NAME
 Capture::Tiny - Capture STDOUT and STDERR from Perl, XS or external
 programs
+
+%package dev
+Summary: dev components for the perl-Capture-Tiny package.
+Group: Development
+Provides: perl-Capture-Tiny-devel = %{version}-%{release}
+
+%description dev
+dev components for the perl-Capture-Tiny package.
+
 
 %package license
 Summary: license components for the perl-Capture-Tiny package.
@@ -24,14 +33,6 @@ Group: Default
 
 %description license
 license components for the perl-Capture-Tiny package.
-
-
-%package man
-Summary: man components for the perl-Capture-Tiny package.
-Group: Default
-
-%description man
-man components for the perl-Capture-Tiny package.
 
 
 %prep
@@ -59,12 +60,12 @@ make TEST_VERBOSE=1 test
 
 %install
 rm -rf %{buildroot}
-mkdir -p %{buildroot}/usr/share/doc/perl-Capture-Tiny
-cp LICENSE %{buildroot}/usr/share/doc/perl-Capture-Tiny/LICENSE
+mkdir -p %{buildroot}/usr/share/package-licenses/perl-Capture-Tiny
+cp LICENSE %{buildroot}/usr/share/package-licenses/perl-Capture-Tiny/LICENSE
 if test -f Makefile.PL; then
-make pure_install PERL_INSTALL_ROOT=%{buildroot}
+make pure_install PERL_INSTALL_ROOT=%{buildroot} INSTALLDIRS=vendor
 else
-./Build install --installdirs=site --destdir=%{buildroot}
+./Build install --installdirs=vendor --destdir=%{buildroot}
 fi
 find %{buildroot} -type f -name .packlist -exec rm -f {} ';'
 find %{buildroot} -depth -type d -exec rmdir {} 2>/dev/null ';'
@@ -73,12 +74,12 @@ find %{buildroot} -type f -name '*.bs' -empty -exec rm -f {} ';'
 
 %files
 %defattr(-,root,root,-)
-/usr/lib/perl5/site_perl/5.26.1/Capture/Tiny.pm
+/usr/lib/perl5/vendor_perl/5.26.1/Capture/Tiny.pm
 
-%files license
-%defattr(-,root,root,-)
-/usr/share/doc/perl-Capture-Tiny/LICENSE
-
-%files man
+%files dev
 %defattr(-,root,root,-)
 /usr/share/man/man3/Capture::Tiny.3
+
+%files license
+%defattr(0644,root,root,0755)
+/usr/share/package-licenses/perl-Capture-Tiny/LICENSE
