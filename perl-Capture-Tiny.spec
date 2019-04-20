@@ -4,10 +4,10 @@
 #
 Name     : perl-Capture-Tiny
 Version  : 0.48
-Release  : 34
+Release  : 35
 URL      : https://cpan.metacpan.org/authors/id/D/DA/DAGOLDEN/Capture-Tiny-0.48.tar.gz
 Source0  : https://cpan.metacpan.org/authors/id/D/DA/DAGOLDEN/Capture-Tiny-0.48.tar.gz
-Summary  : 'Capture STDOUT and STDERR from Perl, XS or external programs'
+Summary  : Capture STDOUT and STDERR from Perl, XS or external programs
 Group    : Development/Tools
 License  : Apache-2.0
 Requires: perl-Capture-Tiny-license = %{version}-%{release}
@@ -22,6 +22,7 @@ programs
 Summary: dev components for the perl-Capture-Tiny package.
 Group: Development
 Provides: perl-Capture-Tiny-devel = %{version}-%{release}
+Requires: perl-Capture-Tiny = %{version}-%{release}
 
 %description dev
 dev components for the perl-Capture-Tiny package.
